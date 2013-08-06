@@ -31,6 +31,6 @@ Veewee::Session.declare({
   :ssh_guest_port => "22",
   :sudo_cmd => "echo '%p'|sudo -S sh '%f'",
   :shutdown_cmd => "shutdown -P now",
-  :postinstall_files => [ "apps", "eclipse.sh","postinstall.sh"],
+  :postinstall_files => [ "apps.sh", "eclipse.sh","postinstall.sh"],
   :postinstall_timeout => "10000"
 })
