@@ -30,6 +30,19 @@
 #
 # Type "install-eclipse -h" for usage guidelines.
 # --------------------------------------------------------------------
+ 
+
+# Don't allow this script to be run directly from command line. 
+# This should be called from another script, to have a higher abstractization of the installation.
+# Example `install-kepler-with-dev-plugins` etc.
+runBy=`ps -o comm= -p $$`
+meWithExtension=`basename $0`
+me=${meWithExtension%%.*}
+
+if [ ${runBy} != ${me} ]; then
+   echo "Direct invocation from CL not allowed! Exiting."
+   exit 0
+fi
 
 ## begin ## meta-data
 readonly __APPNAME=$( basename "${BASH_SOURCE[0]}" )

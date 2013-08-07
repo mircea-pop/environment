@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Usefull apps
+apt-get -y install curl
 apt-get -y install jedit
 apt-get -y install gitg
 apt-get -y install alacarte
